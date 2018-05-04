@@ -12,6 +12,7 @@ namespace CurrentPortfolio.Models
     {
         public DbSet<BlogPost> BlogPosts { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
         public CurrentPortfolioDbContext(DbContextOptions options) : base(options)
         {
@@ -32,7 +33,10 @@ namespace CurrentPortfolio.Models
         }
 
         public DbSet<CurrentPortfolio.Models.BlogPost> BlogPost { get; set; }
-
         public DbSet<CurrentPortfolio.Models.User> User { get; set; }
+        public DbSet<CurrentPortfolio.Models.Comment> Comment { get; set; }
+
     }
 }
+
+    

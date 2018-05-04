@@ -2,16 +2,41 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CurrentPortfolio.Models
 {
+    [Table("Comments")]
     public class Comment
     {
+        [Key]
+        public int CommentId { get; set; }
+
+        [StringLength(255, ErrorMessage = "Please do not exceed 255 characters.")]
+        public string Content { get; set; }
+
+        public int UserId { get; set; }
+        public virtual User User { get; set; }
     }
 }
 
 
 /*
+        [Table("Comments")]
+        public class Comment
+        {
+        [Key]
+        public int CommentId { get; set; }
+
+        [StringLength(255, ErrorMessage = "Please do not exceed 255 characters.")]
+        public string Content { get; set; }
+
+        public int UserId { get; set; }
+        public virtual User User { get; set; }
+        }
+
+
 
  using System;
 using System.Collections.Generic;

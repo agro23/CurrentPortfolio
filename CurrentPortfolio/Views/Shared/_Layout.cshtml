@@ -16,18 +16,42 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+                @using System.Security.Claims
+
+               
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand" id="name-text">ANDY GROSSBERG</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="Contact">Logout</a></li>*@ @*This should be an action link*@
+                    @*<li>@Html.ActionLink("Logout", "LogOff()", "Shared")</li>*@
+
+                    @*<li>@Html.Action("LogOff", "Account", null) </li>*@
+                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                        @*<li>
+                            @using (Html.BeginForm("LogOff", "Account"))
+                            {
+                            <input type="submit" class="btn-btn-default" value="Log out" />
+                            }
+                        </li>*@
+                    @*<li><a asp-area="" asp-controller="Account" asp-action="Index">Logout</a></li>*@
+
+                    }
+                    else
+                    {
+                    @*<li><a asp-area="" asp-con    troller="Home" asp-action="Contact">Login</a></li>*@ @*This should be an action link*@
+                            <li>@Html.ActionLink("Login", "Index", "Account")</li>
+                    }
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
             </div>

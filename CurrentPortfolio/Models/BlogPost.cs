@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CurrentPortfolio.Models
 {
+    [Table("BlogPosts")]
     public class BlogPost
     {
         [Key]
@@ -16,6 +17,24 @@ namespace CurrentPortfolio.Models
         
         public virtual User User { get; set; }
         public virtual Comment Comment { get; set; }
+
+        public override bool Equals(System.Object otherBlogPost)
+        {
+            if (!(otherBlogPost is BlogPost))
+            {
+                return false;
+            }
+            else
+            {
+                BlogPost newBlogPost = (BlogPost)otherBlogPost;
+                return this.BlogPostId.Equals(newBlogPost.BlogPostId);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return this.BlogPostId.GetHashCode();
+        }
     }
 }
 

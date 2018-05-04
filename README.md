@@ -73,21 +73,29 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 
 ## Specifications
 
-* Blog Data Model is created.
+* Blog Data Model is created. -- X
 
-* User Data Model is created.
+* User Data Model is created. -- X
 
-* Comment Data Model is created.
+* Comment Data Model is created. -- X
 
-* Site MVC scaffolded.
+* Site MVC Built.
+  - Home Controller
+  - Home View
+  - Login/Register Controller
+  - Login/ Register View
+  - Blog Controller
+  - Blog View
 
-* Landing page created (updated from Home View).
+* Landing page created (updated from Home View). -- X
 
-* Landing page features an image that expresses my style.
+* Landing page features an image that expresses my style. -- X
 
-* Blog database migration
+* Blog database migration -- X
 
 * Blog Entries can be created, retrieved, updated, and removed from the database.
+
+* Users can be create, retrieved, updated, and removed from the database.
 
 * Blog entries can have comments.
 

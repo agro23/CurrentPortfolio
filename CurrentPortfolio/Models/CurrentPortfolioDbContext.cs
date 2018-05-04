@@ -8,7 +8,7 @@ using CurrentPortfolio.Models;
 
 namespace CurrentPortfolio.Models
 {
-    public class UncivilizedDbContext : IdentityDbContext<User>
+    public class CurrentPortfolioDbContext : IdentityDbContext<User>
     {
         public DbSet<BlogPost> BlogPosts { get; set; }
         public DbSet<User> Users { get; set; }
@@ -31,6 +31,8 @@ namespace CurrentPortfolio.Models
             base.OnModelCreating(builder);
         }
 
-        public DbSet<Uncivilized.Models.GameEvent> GameEvent { get; set; }
+        public DbSet<CurrentPortfolio.Models.BlogPost> BlogPost { get; set; }
+
+        public DbSet<CurrentPortfolio.Models.User> User { get; set; }
     }
 }

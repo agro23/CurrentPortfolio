@@ -93,6 +93,10 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 
 * Blog database migration -- X
 
+* Authentication via Nav bar -- X
+
+* LOGOUT USING AJAX <---------------------------------------------------------
+
 * Blog Entries can be created, retrieved, updated, and removed from the database.
 
 * Users can be create, retrieved, updated, and removed from the database.
@@ -133,6 +137,11 @@ There is room to separate the Admin from Users but not in the short term. In ord
 There are no known bugs or issues at this time.
 
 ## Support and contact details
+
+@using (Html.BeginForm("LogOff", "Account"))
+    {
+        <input type="submit" class="btn btn-default" value="Log out" />
+    }
 
 **Contact the author at andy.grossberg@gmail.com**
 

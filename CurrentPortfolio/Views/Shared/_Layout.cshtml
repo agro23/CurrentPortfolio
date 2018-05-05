@@ -10,7 +10,19 @@
           asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
           asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
     <link rel="stylesheet" href="~/css/styles.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#loginOrOut").click(function () {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("Index", "Account")',
+                success: function (result) {
+                    alert("Yay me!");
+                }
+            });
+        });
+       <!-- This AJAX does not work -->
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -37,7 +49,9 @@
                     @*<li>@Html.ActionLink("Logout", "LogOff()", "Shared")</li>*@
 
                     @*<li>@Html.Action("LogOff", "Account", null) </li>*@
-                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    @*<li>@Html.ActionLink("Logout", "Logout", "Account")</li>*@
+
+                    <li ><a id="#loginOrOut">Logout</a></li>
                         @*<li>
                             @using (Html.BeginForm("LogOff", "Account"))
                             {
